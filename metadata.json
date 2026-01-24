@@ -1,0 +1,7 @@
+{
+  "name": "Shree Jagannath Electricals & Infra Co. Website",
+  "description": "A professional, multi-lingual business website for a registered government electrical contractor based in Bhadravati, Maharashtra, specializing in HT/LT line work and MSEDCL projects.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

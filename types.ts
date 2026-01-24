@@ -1,0 +1,74 @@
+
+// Import React to resolve namespace 'React' error in TypeScript
+import React from 'react';
+
+export type Language = 'mr' | 'hi' | 'en';
+
+export interface Testimonial {
+  name: string;
+  role: string;
+  quote: string;
+  project: string;
+}
+
+export interface TranslationStrings {
+  companyName: string;
+  companyNameRegional: string;
+  tagline: string;
+  govtReg: string;
+  msedclApproved: string;
+  nav: {
+    home: string;
+    about: string;
+    services: string;
+    certs: string;
+    contact: string;
+  };
+  hero: {
+    title: string;
+    subtitle: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
+  };
+  services: {
+    htLine: string;
+    ltLine: string;
+    transformer: string;
+    cable: string;
+    substation: string;
+    commercial: string;
+    domestic: string;
+    supply: string;
+    descriptions: Record<string, string>;
+  };
+  testimonials: {
+    title: string;
+    subtitle: string;
+    items: Testimonial[];
+  };
+  about: {
+    title: string;
+    proprietor: string;
+    experience: string;
+    mission: string;
+    missionText: string;
+  };
+  contact: {
+    title: string;
+    address: string;
+    phone: string;
+    whatsapp: string;
+    formName: string;
+    formEmail: string;
+    formSubject: string;
+    formMessage: string;
+    formSubmit: string;
+  };
+}
+
+export interface Service {
+  id: string;
+  icon: React.ElementType;
+  // Fix: Narrow titleKey to only include keys that map to string values to resolve ReactNode assignment errors
+  titleKey: Exclude<keyof TranslationStrings['services'], 'descriptions'>;
+}
