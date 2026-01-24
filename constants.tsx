@@ -104,8 +104,8 @@ export const TRANSLATIONS: Record<Language, TranslationStrings> = {
     },
     about: {
       title: "आमची माहिती",
-      proprietor: "प्रोप्रायटर: इंजिनिअर रुपेश धवस",
-      experience: "श्री जगन्नाथ इलेक्ट्रिकल्स & इंफ्रा. कं. चे नेतृत्व इंजिनिअर रुपेश धवस करत आहेत, ज्यांना या क्षेत्रातील तांत्रिक आणि व्यावहारिक कौशल्यांचा दीर्घ अनुभव आहे.",
+      proprietor: "प्रोप्रायटर: इंजिनिअर रुपेश ढवस",
+      experience: "श्री जगन्नाथ इलेक्ट्रिकल्स & इंफ्रा. कं. चे नेतृत्व इंजिनिअर रुपेश ढवस करत आहेत, ज्यांना या क्षेत्रातील तांत्रिक आणि व्यावहारिक कौशल्यांचा दीर्घ अनुभव आहे.",
       mission: "आमचे उद्दिष्ट",
       missionText: "आम्ही फक्त विद्युत कामे करत नाही, तर विश्वासाचे नाते निर्माण करतो. प्रत्येक प्रकल्प आमची गुणवत्ता आणि सुरक्षिततेप्रती असलेली वचनबद्धता सिद्ध करतो.",
       features: [
@@ -256,8 +256,8 @@ export const TRANSLATIONS: Record<Language, TranslationStrings> = {
     },
     about: {
       title: "हमारे बारे में",
-      proprietor: "प्रोप्रायटर: इंजिनिअर रुपेश धवस",
-      experience: "श्री जगन्नाथ इलेक्ट्रिकल्स एंड इंफ्रा कंपनी का नेतृत्व इंजीनियर रुपेश धवस कर रहे हैं, जिन्हें इस क्षेत्र में गहरा अनुभव है।",
+      proprietor: "प्रोप्रायटर: इंजिनिअर रुपेश ढवस",
+      experience: "श्री जगन्नाथ इलेक्ट्रिकल्स एंड इंफ्रा कंपनी का नेतृत्व इंजीनियर रुपेश ढवस कर रहे हैं, जिन्हें इस क्षेत्र में गहरा अनुभव है।",
       mission: "हमारा लक्ष्य",
       missionText: "हम केवल विद्युत कार्य नहीं करते, बल्कि विश्वास का रिश्ता बनाते हैं। हमारी प्राथमिकता सुरक्षा और गुणवत्ता है।",
       features: [
@@ -408,8 +408,8 @@ export const TRANSLATIONS: Record<Language, TranslationStrings> = {
     },
     about: {
       title: "About Our Company",
-      proprietor: "Proprietor: Er. Rupesh Dhavas",
-      experience: "Shree Jagannath Electricals & Infra Co. is led by Er. Rupesh Dhavas, who possesses extensive technical and practical expertise in the field.",
+      proprietor: "Proprietor: Er. Rupesh Dhawas",
+      experience: "Shree Jagannath Electricals & Infra Co. is led by Er. Rupesh Dhawas, who possesses extensive technical and practical expertise in the field.",
       mission: "Our Mission",
       missionText: "We don't just do electrical work; we build relationships of trust. Every project proves our commitment to quality and safety.",
       features: [

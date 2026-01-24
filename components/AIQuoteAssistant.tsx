@@ -96,7 +96,7 @@ export const AIQuoteAssistant: React.FC<AIQuoteAssistantProps> = ({ lang }) => {
               <div className="flex items-center space-x-2 mb-1.5 opacity-60">
                 {m.role === 'user' ? <User className="w-3 h-3" /> : <Bot className="w-3 h-3" />}
                 <span className="text-[9px] uppercase font-black tracking-tighter">
-                  {m.role === 'user' ? 'Customer' : 'Er. Rupesh Assistant'}
+                  {m.role === 'user' ? 'Customer' : 'Er. Rupesh Dhawas Assistant'}
                 </span>
               </div>
               <p className="devanagari leading-relaxed text-[15px]">{m.text}</p>

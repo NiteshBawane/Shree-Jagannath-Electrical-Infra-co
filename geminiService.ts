@@ -14,7 +14,7 @@ export const getSmartQuoteAdvice = async (userMessage: string, lang: string) => 
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: `You are a professional technical consultant for 'Shree Jagannath Electricals & Infra Co.', an A-Class Government Registered Electrical Contractor in Bhadravati, Chandrapur, Maharashtra. 
-      Proprietor: Er. Rupesh Dhavas.
+      Proprietor: Er. Rupesh Dhawas.
       
       User asks: "${userMessage}".
       Respond in ${lang === 'mr' ? 'Marathi' : lang === 'hi' ? 'Hindi' : 'English'}.
