@@ -7,26 +7,37 @@ import { GoogleGenAI } from "@google/genai";
  */
 
 export const getSmartQuoteAdvice = async (userMessage: string, lang: string) => {
-  // Always initialize GoogleGenAI inside or right before the call to ensure latest API key usage
+  // Always use process.env.API_KEY directly for initialization as per guidelines
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
-      contents: `You are a professional assistant for 'Shree Jagannath Electricals & Infra Co.', a government-registered electrical contractor in Bhadravati, Maharashtra. 
-      The user is asking for a quote or project advice: "${userMessage}".
+      contents: `You are a professional technical consultant for 'Shree Jagannath Electricals & Infra Co.', an A-Class Government Registered Electrical Contractor in Bhadravati, Chandrapur, Maharashtra. 
+      Proprietor: Er. Rupesh Dhavas.
+      
+      User asks: "${userMessage}".
       Respond in ${lang === 'mr' ? 'Marathi' : lang === 'hi' ? 'Hindi' : 'English'}.
-      Be professional, trust-building, and suggest which of our services (HT/LT line, Transformer, Wiring, Substation, Material Supply) fits their need.
-      Mention that Er. Rupesh Dhavas and his team will review the details soon. Keep it under 100 words.`,
+      
+      Guidelines:
+      1. Be professional, technical, and trust-building.
+      2. Mention that we specialize in MSEDCL (Mahavitaran) projects, HT/LT lines, Sub-stations, and Transformers.
+      3. Suggest that the team will provide a precise quote after a site visit.
+      4. Keep the response under 120 words.
+      5. Sound like a helpful local expert from Maharashtra.`,
       config: {
         temperature: 0.7,
+        topP: 0.95,
       },
     });
 
-    // Access .text property directly (do not call as a method)
-    return response.text;
-  } catch (error) {
-    console.error("Gemini Error:", error);
-    return null;
+    // Directly access the text property of GenerateContentResponse
+    return response.text || (lang === 'mr' ? "मी तुमची विनंती समजू शकलो नाही. कृपया पुन्हा प्रयत्न करा." : "I couldn't process that request. Please try again.");
+  } catch (error: any) {
+    console.error("Gemini API Error:", error);
+    // Return a graceful error message indicating communication difficulty
+    return lang === 'mr' 
+      ? "संपर्क साधण्यात अडचण येत आहे. कृपया आम्हाला ८४११००७२५९ वर कॉल करा." 
+      : "Connection error. Please call us at 8411007259.";
   }
 };
