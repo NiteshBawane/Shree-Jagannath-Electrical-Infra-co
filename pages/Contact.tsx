@@ -13,7 +13,7 @@ export const Contact: React.FC<{ lang: Language }> = ({ lang }) => {
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h1 className="text-4xl font-bold text-gray-900 mb-6 devanagari">{t.nav.contact}</h1>
           <p className="text-gray-600 devanagari">
-            आपल्या प्रकल्पाबद्दल चर्चा करण्यासाठी आजच आम्हाला संपर्क करा.
+            {t.contact.intro}
           </p>
         </div>
 
@@ -25,7 +25,7 @@ export const Contact: React.FC<{ lang: Language }> = ({ lang }) => {
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1 devanagari">आमचा पत्ता</h4>
+                    <h4 className="font-bold text-gray-900 mb-1 devanagari">{t.contact.addressLabel}</h4>
                     <p className="text-sm text-gray-500 devanagari">{t.contact.address}</p>
                   </div>
                </div>
@@ -37,7 +37,7 @@ export const Contact: React.FC<{ lang: Language }> = ({ lang }) => {
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1 devanagari">संपर्क क्रमांक</h4>
+                    <h4 className="font-bold text-gray-900 mb-1 devanagari">{t.contact.phoneLabel}</h4>
                     <p className="text-sm text-gray-500 devanagari">{t.contact.phone}</p>
                   </div>
                </div>
@@ -49,7 +49,7 @@ export const Contact: React.FC<{ lang: Language }> = ({ lang }) => {
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1 devanagari">ईमेल</h4>
+                    <h4 className="font-bold text-gray-900 mb-1 devanagari">{t.contact.emailLabel}</h4>
                     <p className="text-sm text-gray-500">shreejagannathelectrical@gmail.com</p>
                   </div>
                </div>
@@ -60,7 +60,7 @@ export const Contact: React.FC<{ lang: Language }> = ({ lang }) => {
               className="flex items-center justify-center space-x-3 w-full p-6 bg-green-600 text-white rounded-3xl font-bold hover:bg-green-700 transition-colors shadow-lg shadow-green-200"
             >
               <MessageCircle className="w-6 h-6" />
-              <span className="devanagari">व्हॉट्सॲपवर चॅट करा</span>
+              <span className="devanagari">{t.contact.whatsappAction}</span>
             </a>
           </div>
 
@@ -72,7 +72,7 @@ export const Contact: React.FC<{ lang: Language }> = ({ lang }) => {
                     <input 
                       type="text" 
                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-700 outline-none transition-all" 
-                      placeholder="आपले पूर्ण नाव"
+                      placeholder={t.contact.formNamePlaceholder}
                     />
                   </div>
                   <div className="space-y-2">
@@ -80,7 +80,7 @@ export const Contact: React.FC<{ lang: Language }> = ({ lang }) => {
                     <input 
                       type="text" 
                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-700 outline-none transition-all" 
-                      placeholder="ईमेल किंवा फोन"
+                      placeholder={t.contact.formEmailPlaceholder}
                     />
                   </div>
                </div>
@@ -89,7 +89,7 @@ export const Contact: React.FC<{ lang: Language }> = ({ lang }) => {
                   <input 
                     type="text" 
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-700 outline-none transition-all" 
-                    placeholder="संदेशाचा विषय"
+                    placeholder={t.contact.formSubjectPlaceholder}
                   />
                </div>
                <div className="space-y-2">
@@ -97,7 +97,7 @@ export const Contact: React.FC<{ lang: Language }> = ({ lang }) => {
                   <textarea 
                     rows={4} 
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-700 outline-none transition-all resize-none" 
-                    placeholder="तुमचा संदेश येथे लिहा..."
+                    placeholder={t.contact.formMessagePlaceholder}
                   />
                </div>
                <button 

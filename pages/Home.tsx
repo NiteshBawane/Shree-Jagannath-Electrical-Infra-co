@@ -43,9 +43,11 @@ export const Home: React.FC<{ lang: Language }> = ({ lang }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-flex items-center space-x-2 bg-red-50 text-red-700 px-4 py-2 rounded-full mb-6">
-                <ShieldCheck className="w-4 h-4" />
-                <span className="text-sm font-bold devanagari">{t.govtReg}</span>
+              <div className="inline-flex items-center space-x-2 bg-red-50 px-4 py-2 rounded-full mb-6 border border-red-100 shadow-sm animate-trust-badge">
+                <ShieldCheck className="w-4 h-4 text-red-700" />
+                <span className="text-sm font-bold devanagari trust-shimmer animate-jump">
+                  {t.govtReg}
+                </span>
               </div>
               <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-[1.15] mb-6 devanagari">
                 {t.hero.title}
@@ -69,14 +71,22 @@ export const Home: React.FC<{ lang: Language }> = ({ lang }) => {
                 </Link>
               </div>
               
-              <div className="mt-12 flex items-center space-x-8 opacity-70 grayscale">
+              <div className="mt-12 flex items-center space-x-8 opacity-80 grayscale hover:grayscale-0 transition-all">
                 <div className="flex flex-col items-center">
-                   <div className="h-10 w-24 bg-gray-200 rounded animate-pulse" />
-                   <span className="text-[10px] mt-1 font-bold">MSEDCL AUTH</span>
+                   <img 
+                    src="https://www.mypunepulse.com/wp-content/uploads/2023/02/msedcl-1.jpg" 
+                    alt="MSEDCL Logo" 
+                    className="h-10 w-auto object-contain" 
+                   />
+                   <span className="text-[10px] mt-1 font-bold text-gray-500">MSEDCL AUTH</span>
                 </div>
-                <div className="flex flex-col items-center">
-                   <div className="h-10 w-24 bg-gray-200 rounded animate-pulse" />
-                   <span className="text-[10px] mt-1 font-bold">ISO 9001:2015</span>
+                <div className="flex flex-col items-center border-l pl-8">
+                   <img 
+                    src="https://tse3.mm.bing.net/th/id/OIP.NVPwkB7P2LUDOReA1Gl5KQHaE8?pid=Api&P=0&h=180" 
+                    alt="ISO 9001 Logo" 
+                    className="h-10 w-auto object-contain" 
+                   />
+                   <span className="text-[10px] mt-1 font-bold text-gray-500">ISO 9001:2015</span>
                 </div>
               </div>
             </div>
@@ -91,8 +101,8 @@ export const Home: React.FC<{ lang: Language }> = ({ lang }) => {
               </div>
               <div className="absolute -bottom-6 -left-6 bg-green-700 text-white p-8 rounded-2xl shadow-xl max-w-xs">
                 <Award className="w-10 h-10 mb-4" />
-                <h4 className="font-bold text-xl mb-2 devanagari">15+ वर्षांचा अनुभव</h4>
-                <p className="text-sm opacity-90 devanagari">शेकडो यशस्वी प्रकल्प पूर्ण केले.</p>
+                <h4 className="font-bold text-xl mb-2 devanagari">{t.experienceYears}</h4>
+                <p className="text-sm opacity-90 devanagari">{t.experienceSubtitle}</p>
               </div>
             </div>
           </div>
@@ -108,7 +118,7 @@ export const Home: React.FC<{ lang: Language }> = ({ lang }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 devanagari">{t.nav.services}</h2>
-            <p className="text-gray-600 devanagari">आम्ही उच्च आणि कमी दाबाच्या सर्व प्रकारच्या विद्युत सेवांमध्ये तज्ञ आहोत.</p>
+            <p className="text-gray-600 devanagari">{t.servicesPage.intro}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -127,7 +137,7 @@ export const Home: React.FC<{ lang: Language }> = ({ lang }) => {
           
           <div className="text-center mt-12">
             <Link to="/services" className="text-red-700 font-bold hover:underline inline-flex items-center space-x-2 devanagari">
-              <span>सर्व सेवा पहा</span>
+              <span>{t.serviceViewAll}</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -210,35 +220,19 @@ export const Home: React.FC<{ lang: Language }> = ({ lang }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
              <div className="space-y-8">
-                <h2 className="text-3xl font-bold text-gray-900 devanagari">का निवडावे आम्हाला?</h2>
+                <h2 className="text-3xl font-bold text-gray-900 devanagari">{t.trustFactors.title}</h2>
                 <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-1 bg-green-100 text-green-700 rounded-full mt-1">
-                      <CheckCircle2 className="w-5 h-5" />
+                  {t.trustFactors.items.map((item, i) => (
+                    <div key={i} className="flex items-start space-x-4">
+                      <div className="p-1 bg-green-100 text-green-700 rounded-full mt-1">
+                        <CheckCircle2 className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-900 devanagari">{item.title}</h4>
+                        <p className="text-gray-500 devanagari">{item.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900 devanagari">वेळेवर पूर्तता</h4>
-                      <p className="text-gray-500 devanagari">आम्ही दिलेली मुदत पाळतो.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="p-1 bg-green-100 text-green-700 rounded-full mt-1">
-                      <CheckCircle2 className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900 devanagari">सुरक्षिततेची हमी</h4>
-                      <p className="text-gray-500 devanagari">सर्व कामांत उच्च सुरक्षा मानकांचे पालन.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="p-1 bg-green-100 text-green-700 rounded-full mt-1">
-                      <CheckCircle2 className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900 devanagari">परवडणारे दर</h4>
-                      <p className="text-gray-500 devanagari">पारदर्शक आणि स्पर्धात्मक किंमत धोरण.</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
              </div>
              
@@ -255,10 +249,10 @@ export const Home: React.FC<{ lang: Language }> = ({ lang }) => {
          <div className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-8 max-w-7xl mx-auto px-4">
             <div className="flex items-center space-x-2">
               <MapPin className="w-5 h-5" />
-              <span className="font-bold devanagari">कार्यक्षेत्र: भद्रावती, वरोरा, आणि चंद्रपूर</span>
+              <span className="font-bold devanagari">{t.contact.locationBar}</span>
             </div>
             <div className="hidden md:block h-6 w-px bg-white/20" />
-            <span className="devanagari">अधिक माहितीसाठी संपर्क साधा</span>
+            <span className="devanagari">{t.contact.locationCallAction}</span>
          </div>
       </div>
     </div>

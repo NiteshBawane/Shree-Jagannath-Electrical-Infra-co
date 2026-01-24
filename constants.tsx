@@ -25,6 +25,9 @@ export const TRANSLATIONS: Record<Language, TranslationStrings> = {
     tagline: "नोंदणीकृत सरकारी विद्युत कंत्राटदार",
     govtReg: "शासकीय नोंदणीकृत विद्युत कंत्राटदार",
     msedclApproved: "महावितरण (MSEDCL) अधिकृत कंत्राटदार",
+    experienceYears: "१५+ वर्षांचा अनुभव",
+    experienceSubtitle: "शेकडो यशस्वी प्रकल्प पूर्ण केले.",
+    serviceViewAll: "सर्व सेवा पहा",
     nav: {
       home: "मुख्यपृष्ठ",
       about: "आमच्याबद्दल",
@@ -85,20 +88,70 @@ export const TRANSLATIONS: Record<Language, TranslationStrings> = {
     about: {
       title: "आमची माहिती",
       proprietor: "प्रोप्रायटर: इंजिनिअर रुपेश धवस",
-      experience: "अनेक वर्षांचा सरकारी आणि खाजगी प्रकल्पांचा अनुभव.",
+      experience: "श्री जगन्नाथ इलेक्ट्रिकल्स & इंफ्रा. कं. चे नेतृत्व इंजिनिअर रुपेश धवस करत आहेत, ज्यांना या क्षेत्रातील तांत्रिक आणि व्यावहारिक कौशल्यांचा दीर्घ अनुभव आहे.",
       mission: "आमचे उद्दिष्ट",
-      missionText: "ग्राहकांना सुरक्षित, दर्जेदार आणि नियमानुसार विद्युत सेवा प्रदान करणे हे आमचे ब्रीदवाक्य आहे."
+      missionText: "आम्ही फक्त विद्युत कामे करत नाही, तर विश्वासाचे नाते निर्माण करतो. प्रत्येक प्रकल्प आमची गुणवत्ता आणि सुरक्षिततेप्रती असलेली वचनबद्धता सिद्ध करतो.",
+      features: [
+        { label: "प्रमाणित गुणवत्ता", desc: "आम्ही वापरतो फक्त आयएसआय प्रमाणित साहित्य." },
+        { label: "अनुभवी टीम", desc: "प्रशिक्षित आणि अनुभवी तंत्रज्ञांचा ताफा." },
+        { label: "ग्राहक समाधान", desc: "५००+ समाधानी ग्राहक आणि यशस्वी प्रकल्प." }
+      ]
+    },
+    trustFactors: {
+      title: "का निवडावे आम्हाला?",
+      items: [
+        { title: "वेळेवर पूर्तता", desc: "आम्ही दिलेली मुदत पाळतो." },
+        { title: "सुरक्षिततेची हमी", desc: "सर्व कामांत उच्च सुरक्षा मानकांचे पालन." },
+        { title: "परवडणारे दर", desc: "पारदर्शक आणि स्पर्धात्मक किंमत धोरण." }
+      ]
     },
     contact: {
       title: "संपर्क साधा",
+      intro: "आपल्या प्रकल्पाबद्दल चर्चा करण्यासाठी आजच आम्हाला संपर्क करा.",
       address: "पत्ता: संताजी नगर, तह. भद्रावती, जि. चंद्रपूर - ४४२९०२",
       phone: "फोन: +91 8411007259",
       whatsapp: "व्हॉट्सॲप",
+      addressLabel: "आमचा पत्ता",
+      phoneLabel: "संपर्क क्रमांक",
+      emailLabel: "ईमेल",
       formName: "नाव",
       formEmail: "ईमेल / फोन",
       formSubject: "विषय",
       formMessage: "संदेश",
-      formSubmit: "संदेश पाठवा"
+      formSubmit: "संदेश पाठवा",
+      formNamePlaceholder: "आपले पूर्ण नाव",
+      formEmailPlaceholder: "ईमेल किंवा फोन",
+      formSubjectPlaceholder: "संदेशाचा विषय",
+      formMessagePlaceholder: "तुमचा संदेश येथे लिहा...",
+      whatsappAction: "व्हॉट्सॲपवर चॅट करा",
+      locationBar: "कार्यक्षेत्र: भद्रावती, वरोरा, आणि चंद्रपूर",
+      locationCallAction: "अधिक माहितीसाठी संपर्क साधा"
+    },
+    certsPage: {
+      intro: "आम्ही सर्व शासकीय नियमांचे पालन करतो आणि आवश्यक सर्व प्रमाणपत्रांसह आपली सेवा बजावतो.",
+      footerTitle: "आम्ही गुणवत्तेशी कधीच तडजोड करत नाही",
+      footerDesc: "आमची सर्व कामे भारतीय विद्युत नियमावली (Indian Electricity Rules) नुसार आणि पूर्ण सुरक्षिततेसह केली जातात.",
+      items: [
+        {
+          title: "महावितरण (MSEDCL) नोंदणी",
+          authority: "महाराष्ट्र राज्य विद्युत वितरण कंपनी मर्यादित",
+          desc: "उच्च दाब (HT) आणि लघु दाब (LT) कामांसाठी 'अ' वर्ग अधिकृत कंत्राटदार."
+        },
+        {
+          title: "सरकारी परवाना (Electrical License)",
+          authority: "विद्युत निरीक्षक विभाग, महाराष्ट्र शासन",
+          desc: "सर्व प्रकारचे शासकीय विद्युत प्रकल्प हाताळण्याचा कायदेशीर परवाना."
+        },
+        {
+          title: "जीएसटी नोंदणी (GST Registration)",
+          authority: "वित्त मंत्रालय, भारत सरकार",
+          desc: "नियमानुसार टॅक्स कॉम्प्लायन्स पाळणारी व्यावसायिक संस्था."
+        }
+      ]
+    },
+    servicesPage: {
+      intro: "आम्ही महावितरण (MSEDCL) कडे अधिकृत नोंदणीकृत असून खालील सर्व विद्युत सेवा प्रदान करतो.",
+      cardDetail: "आमचे तज्ञ सुरक्षित आणि नियमानुसार काम पूर्ण करण्याची खात्री देतात."
     }
   },
   hi: {
@@ -107,6 +160,9 @@ export const TRANSLATIONS: Record<Language, TranslationStrings> = {
     tagline: "पंजीकृत सरकारी विद्युत ठेकेदार",
     govtReg: "शासकीय पंजीकृत विद्युत ठेकेदार",
     msedclApproved: "महावितरण (MSEDCL) अधिकृत ठेकेदार",
+    experienceYears: "15+ वर्षों का अनुभव",
+    experienceSubtitle: "सैकड़ों सफल प्रोजेक्ट्स पूरे किए गए।",
+    serviceViewAll: "सभी सेवाएं देखें",
     nav: {
       home: "होम",
       about: "हमारे बारे में",
@@ -167,20 +223,70 @@ export const TRANSLATIONS: Record<Language, TranslationStrings> = {
     about: {
       title: "हमारे बारे में",
       proprietor: "प्रोप्रायटर: इंजिनिअर रुपेश धवस",
-      experience: "सरकारी और निजी विद्युत परियोजनाओं में वर्षों का अनुभव।",
+      experience: "श्री जगन्नाथ इलेक्ट्रिकल्स एंड इंफ्रा कंपनी का नेतृत्व इंजीनियर रुपेश धवस कर रहे हैं, जिन्हें इस क्षेत्र में गहरा अनुभव है।",
       mission: "हमारा लक्ष्य",
-      missionText: "हमारा उद्देश्य नियमों के अनुसार सुरक्षित और सर्वोत्तम विद्युत सेवाएं प्रदान करना है।"
+      missionText: "हम केवल विद्युत कार्य नहीं करते, बल्कि विश्वास का रिश्ता बनाते हैं। हमारी प्राथमिकता सुरक्षा और गुणवत्ता है।",
+      features: [
+        { label: "प्रमाणित गुणवत्ता", desc: "हम केवल ISI प्रमाणित सामग्री का उपयोग करते हैं।" },
+        { label: "अनुभवी टीम", desc: "प्रशिक्षित और अनुभवी तकनीशियनों की टीम।" },
+        { label: "ग्राहक संतुष्टि", desc: "500+ संतुष्ट ग्राहक और सफल प्रोजेक्ट्स।" }
+      ]
+    },
+    trustFactors: {
+      title: "हमें क्यों चुनें?",
+      items: [
+        { title: "समय पर पूर्णता", desc: "हम समय सीमा का पालन करते हैं।" },
+        { title: "सुरक्षा की गारंटी", desc: "सभी कार्यों में उच्च सुरक्षा मानकों का पालन।" },
+        { title: "किफायती दरें", desc: "पारदर्शी और प्रतिस्पर्धी मूल्य निर्धारण।" }
+      ]
     },
     contact: {
       title: "संपर्क करें",
-      address: "पता: संताजी नगर, तह. भद्रावती, जिला चंद्रपुर - 442902",
+      intro: "अपने प्रोजेक्ट के बारे में चर्चा करने के लिए आज ही हमसे संपर्क करें।",
+      address: "पता: संताजी नगर, तहसील भद्रावती, जिला चंद्रपुर - 442902",
       phone: "फोन: +91 8411007259",
       whatsapp: "व्हाट्सएप",
+      addressLabel: "हमारा पता",
+      phoneLabel: "संपर्क नंबर",
+      emailLabel: "ईमेल",
       formName: "नाम",
       formEmail: "ईमेल / फोन",
       formSubject: "विषय",
       formMessage: "संदेश",
-      formSubmit: "संदेश भेजें"
+      formSubmit: "संदेश भेजें",
+      formNamePlaceholder: "आपका पूरा नाम",
+      formEmailPlaceholder: "ईमेल या फोन",
+      formSubjectPlaceholder: "संदेश का विषय",
+      formMessagePlaceholder: "अपना संदेश यहाँ लिखें...",
+      whatsappAction: "व्हाट्सएप पर चैट करें",
+      locationBar: "कार्यक्षेत्र: भद्रावती, वरोरा और चंद्रपुर",
+      locationCallAction: "अधिक जानकारी के लिए संपर्क करें"
+    },
+    certsPage: {
+      intro: "हम सभी सरकारी नियमों का पालन करते हैं और आवश्यक प्रमाणपत्रों के साथ सेवा प्रदान करते हैं।",
+      footerTitle: "हम गुणवत्ता से कभी समझौता नहीं करते",
+      footerDesc: "हमारे सभी कार्य भारतीय विद्युत नियमों और पूर्ण सुरक्षा के अनुसार किए जाते हैं।",
+      items: [
+        {
+          title: "महावितरण (MSEDCL) पंजीकरण",
+          authority: "महाराष्ट्र राज्य विद्युत वितरण कंपनी लिमिटेड",
+          desc: "HT और LT कार्यों के लिए 'ए' श्रेणी अधिकृत ठेकेदार।"
+        },
+        {
+          title: "सरकारी लाइसेंस (Electrical License)",
+          authority: "विद्युत निरीक्षक विभाग, महाराष्ट्र सरकार",
+          desc: "सभी प्रकार की सरकारी परियोजनाओं के लिए वैध लाइसेंस।"
+        },
+        {
+          title: "जीएसटी पंजीकरण (GST Registration)",
+          authority: "वित्त मंत्रालय, भारत सरकार",
+          desc: "नियमों का पालन करने वाली पेशेवर संस्था।"
+        }
+      ]
+    },
+    servicesPage: {
+      intro: "हम महावितरण (MSEDCL) के साथ पंजीकृत हैं और निम्नलिखित विद्युत सेवाएं प्रदान करते हैं।",
+      cardDetail: "हमारे विशेषज्ञ सुरक्षित और नियमों के अनुसार कार्य पूरा करना सुनिश्चित करते हैं।"
     }
   },
   en: {
@@ -189,6 +295,9 @@ export const TRANSLATIONS: Record<Language, TranslationStrings> = {
     tagline: "Registered Government Electrical Contractor",
     govtReg: "Registered Government Electrical Contractor",
     msedclApproved: "Authorized Mahavitaran (MSEDCL) Contractor",
+    experienceYears: "15+ Years of Experience",
+    experienceSubtitle: "Hundreds of successful projects completed.",
+    serviceViewAll: "View All Services",
     nav: {
       home: "Home",
       about: "About Us",
@@ -249,20 +358,70 @@ export const TRANSLATIONS: Record<Language, TranslationStrings> = {
     about: {
       title: "About Our Company",
       proprietor: "Proprietor: Er. Rupesh Dhavas",
-      experience: "Extensive experience in government and private sector projects.",
+      experience: "Shree Jagannath Electricals & Infra Co. is led by Er. Rupesh Dhavas, who possesses extensive technical and practical expertise in the field.",
       mission: "Our Mission",
-      missionText: "To deliver compliant, safe, and top-tier electrical infrastructure services."
+      missionText: "We don't just do electrical work; we build relationships of trust. Every project proves our commitment to quality and safety.",
+      features: [
+        { label: "Certified Quality", desc: "We use only ISI-certified materials." },
+        { label: "Experienced Team", desc: "Fleet of trained and experienced technicians." },
+        { label: "Customer Satisfaction", desc: "500+ satisfied customers and successful projects." }
+      ]
+    },
+    trustFactors: {
+      title: "Why Choose Us?",
+      items: [
+        { title: "Timely Completion", desc: "We strictly adhere to deadlines." },
+        { title: "Safety Guarantee", desc: "High safety standards followed in all works." },
+        { title: "Affordable Rates", desc: "Transparent and competitive pricing policy." }
+      ]
     },
     contact: {
       title: "Get In Touch",
+      intro: "Contact us today to discuss your project requirements.",
       address: "Address: Santaji Nagar, Th Bhadrawati, Dist Chandrapur, Pin - 442902",
       phone: "Phone: +91 8411007259",
       whatsapp: "WhatsApp",
+      addressLabel: "Our Address",
+      phoneLabel: "Contact Number",
+      emailLabel: "Email",
       formName: "Name",
       formEmail: "Email / Phone",
       formSubject: "Subject",
       formMessage: "Message",
-      formSubmit: "Send Message"
+      formSubmit: "Send Message",
+      formNamePlaceholder: "Your Full Name",
+      formEmailPlaceholder: "Email or Phone",
+      formSubjectPlaceholder: "Subject of Message",
+      formMessagePlaceholder: "Write your message here...",
+      whatsappAction: "Chat on WhatsApp",
+      locationBar: "Working Areas: Bhadrawati, Warora, and Chandrapur",
+      locationCallAction: "Contact us for more details"
+    },
+    certsPage: {
+      intro: "We comply with all government regulations and operate with all necessary certifications.",
+      footerTitle: "No Compromise on Quality",
+      footerDesc: "All our works are performed according to Indian Electricity Rules with full safety.",
+      items: [
+        {
+          title: "MSEDCL Registration",
+          authority: "Maharashtra State Electricity Distribution Co. Ltd.",
+          desc: "'A' Class authorized contractor for HT and LT works."
+        },
+        {
+          title: "Government License (Electrical License)",
+          authority: "Electrical Inspection Department, Govt. of Maharashtra",
+          desc: "Legal license to handle all types of government electrical projects."
+        },
+        {
+          title: "GST Registration",
+          authority: "Ministry of Finance, Government of India",
+          desc: "Professional organization maintaining full tax compliance."
+        }
+      ]
+    },
+    servicesPage: {
+      intro: "We are officially registered with MSEDCL and provide the following electrical services.",
+      cardDetail: "Our experts ensure safe and compliant project execution."
     }
   }
 };

@@ -16,6 +16,40 @@
       .devanagari {
         font-family: 'Noto Sans Devanagari', sans-serif;
       }
+
+      @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+
+      .trust-shimmer {
+        background: linear-gradient(90deg, #b91c1c 0%, #ef4444 50%, #b91c1c 100%);
+        background-size: 200% auto;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: shimmer 3s infinite linear;
+        display: inline-block;
+      }
+
+      @keyframes jumping {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+
+      .animate-jump {
+        display: inline-block;
+        animation: jumping 1s ease-in-out infinite;
+      }
+
+      @keyframes soft-pulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(185, 28, 28, 0); }
+        50% { transform: scale(1.02); box-shadow: 0 0 15px 2px rgba(185, 28, 28, 0.1); }
+      }
+
+      .animate-trust-badge {
+        animation: soft-pulse 4s infinite ease-in-out;
+      }
     </style>
   <script type="importmap">
 {
@@ -32,5 +66,7 @@
 </head>
   <body>
     <div id="root"></div>
+    <!-- Entry point for the React application -->
+    <script type="module" src="index.tsx"></script>
   </body>
 </html>

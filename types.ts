@@ -17,6 +17,9 @@ export interface TranslationStrings {
   tagline: string;
   govtReg: string;
   msedclApproved: string;
+  experienceYears: string;
+  experienceSubtitle: string;
+  serviceViewAll: string;
   nav: {
     home: string;
     about: string;
@@ -52,23 +55,48 @@ export interface TranslationStrings {
     experience: string;
     mission: string;
     missionText: string;
+    features: { label: string; desc: string }[];
+  };
+  trustFactors: {
+    title: string;
+    items: { title: string; desc: string }[];
   };
   contact: {
     title: string;
+    intro: string;
     address: string;
     phone: string;
     whatsapp: string;
+    addressLabel: string;
+    phoneLabel: string;
+    emailLabel: string;
     formName: string;
     formEmail: string;
     formSubject: string;
     formMessage: string;
     formSubmit: string;
+    formNamePlaceholder: string;
+    formEmailPlaceholder: string;
+    formSubjectPlaceholder: string;
+    formMessagePlaceholder: string;
+    whatsappAction: string;
+    locationBar: string;
+    locationCallAction: string;
+  };
+  certsPage: {
+    intro: string;
+    footerTitle: string;
+    footerDesc: string;
+    items: { title: string; authority: string; desc: string }[];
+  };
+  servicesPage: {
+    intro: string;
+    cardDetail: string;
   };
 }
 
 export interface Service {
   id: string;
   icon: React.ElementType;
-  // Fix: Narrow titleKey to only include keys that map to string values to resolve ReactNode assignment errors
   titleKey: Exclude<keyof TranslationStrings['services'], 'descriptions'>;
 }
