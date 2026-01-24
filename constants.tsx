@@ -61,6 +61,23 @@ export const TRANSLATIONS: Record<Language, TranslationStrings> = {
         supply: "सर्व प्रकारचे दर्जेदार इलेक्ट्रिकल साहित्य पुरवठा."
       }
     },
+    workflow: {
+      title: "आमची कार्यपद्धती",
+      subtitle: "आम्ही प्रत्येक प्रकल्प पद्धतशीरपणे पूर्ण करतो.",
+      steps: [
+        { title: "जागेची पाहणी", desc: "आम्ही प्रत्यक्ष जागेवर येऊन कामाचे मोजमाप घेतो." },
+        { title: "नियोजन आणि कोटेशन", desc: "कामाचे अचूक तांत्रिक नियोजन आणि बजेट ठरवले जाते." },
+        { title: "शासकीय मंजुरी", desc: "महावितरण आणि आवश्यक विभागांची परवानगी आम्ही मिळवतो." },
+        { title: "यशस्वी पूर्तता", desc: "उच्च गुणवत्तेसह काम वेळेत पूर्ण केले जाते." }
+      ]
+    },
+    consultation: {
+      title: "मोफत तांत्रिक सल्ला",
+      subtitle: "आपल्या प्रकल्पासाठी आजच इंजिनिअरशी चर्चा करा.",
+      cta: "तज्ज्ञांशी चर्चा करा",
+      badge: "त्वरीत प्रतिसाद",
+      types: ["MSEDCL नवीन जोडणी", "ट्रान्सफॉर्मर वर्क", "इंडस्ट्रियल वायरिंग", "सब-स्टेशन वर्क"]
+    },
     testimonials: {
       title: "आमच्या ग्राहकांचे मत",
       subtitle: "आमच्या कामाच्या दर्जाबद्दल ग्राहकांचे अनुभव",
@@ -196,6 +213,23 @@ export const TRANSLATIONS: Record<Language, TranslationStrings> = {
         supply: "उच्च गुणवत्ता वाली विद्युत सामग्री का विश्वसनीय स्रोत।"
       }
     },
+    workflow: {
+      title: "हमारी कार्यप्रक्रिया",
+      subtitle: "हम हर प्रोजेक्ट को एक योजनाबद्ध तरीके से पूरा करते हैं।",
+      steps: [
+        { title: "साइट सर्वेक्षण", desc: "हम साइट पर आकर सटीक माप लेते हैं।" },
+        { title: "कोटेशन और प्लानिंग", desc: "तकनीकी योजना और बजट तैयार किया जाता है।" },
+        { title: "सरकारी मंजूरी", desc: "MSEDCL और अन्य विभागों की मंजूरी हम लेते हैं।" },
+        { title: "सफल निष्पादन", desc: "उच्च गुणवत्ता के साथ समय पर काम पूरा।" }
+      ]
+    },
+    consultation: {
+      title: "निःशुल्क तकनीकी सलाह",
+      subtitle: "अपने प्रोजेक्ट के लिए आज ही इंजीनियर से बात करें।",
+      cta: "विशेषज्ञ से बात करें",
+      badge: "त्वरित प्रतिक्रिया",
+      types: ["MSEDCL नया कनेक्शन", "ट्रांसफार्मर वर्क", "इंडस्ट्रियल वायरिंग", "सब-स्टेशन वर्क"]
+    },
     testimonials: {
       title: "ग्राहकों की राय",
       subtitle: "हमारे काम के प्रति ग्राहकों का विश्वास",
@@ -330,6 +364,23 @@ export const TRANSLATIONS: Record<Language, TranslationStrings> = {
         domestic: "Safe and reliable electrical installations for homes.",
         supply: "One-stop destination for high-quality electrical components."
       }
+    },
+    workflow: {
+      title: "Our Workflow",
+      subtitle: "We follow a systematic approach for every electrical project.",
+      steps: [
+        { title: "Site Survey", desc: "We visit the site for accurate measurements and feasibility." },
+        { title: "Quote & Design", desc: "A technical plan and transparent budget are provided." },
+        { title: "Govt. Approvals", desc: "We handle MSEDCL and relevant authority permissions." },
+        { title: "Successful Delivery", desc: "Quality execution with timely project completion." }
+      ]
+    },
+    consultation: {
+      title: "Free Technical Advice",
+      subtitle: "Talk to our engineer about your project needs today.",
+      cta: "Consult an Expert",
+      badge: "Quick Response",
+      types: ["MSEDCL New Connection", "Transformer Works", "Industrial Wiring", "Sub-station Work"]
     },
     testimonials: {
       title: "Customer Testimonials",

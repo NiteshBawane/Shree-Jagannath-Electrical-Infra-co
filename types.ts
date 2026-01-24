@@ -61,6 +61,18 @@ export interface TranslationStrings {
     title: string;
     items: { title: string; desc: string }[];
   };
+  workflow: {
+    title: string;
+    subtitle: string;
+    steps: { title: string; desc: string }[];
+  };
+  consultation: {
+    title: string;
+    subtitle: string;
+    cta: string;
+    badge: string;
+    types: string[];
+  };
   contact: {
     title: string;
     intro: string;

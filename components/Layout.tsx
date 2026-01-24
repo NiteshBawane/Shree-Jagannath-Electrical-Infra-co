@@ -1,8 +1,8 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, MessageCircle, Globe } from 'lucide-react';
-import { Language, TranslationStrings } from '../types';
+import { Language } from '../types';
 import { LANGUAGES, TRANSLATIONS } from '../constants';
 
 interface LayoutProps {
@@ -11,7 +11,6 @@ interface LayoutProps {
   setLang: (l: Language) => void;
 }
 
-// Fix: Navbar doesn't need children, using Omit to satisfy LayoutProps interface while excluding children
 const Navbar: React.FC<Omit<LayoutProps, 'children'>> = ({ lang, setLang }) => {
   const [isOpen, setIsOpen] = useState(false);
   const t = TRANSLATIONS[lang];
@@ -40,7 +39,6 @@ const Navbar: React.FC<Omit<LayoutProps, 'children'>> = ({ lang, setLang }) => {
             </Link>
           </div>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -60,8 +58,8 @@ const Navbar: React.FC<Omit<LayoutProps, 'children'>> = ({ lang, setLang }) => {
                 <button
                   key={l.code}
                   onClick={() => setLang(l.code)}
-                  className={`text-xs px-2 py-1 rounded ${
-                    lang === l.code ? 'bg-red-700 text-white' : 'hover:bg-gray-100 text-gray-600'
+                  className={`text-xs px-2 py-1 rounded transition-all ${
+                    lang === l.code ? 'bg-red-700 text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'
                   }`}
                 >
                   {l.label}
@@ -70,7 +68,6 @@ const Navbar: React.FC<Omit<LayoutProps, 'children'>> = ({ lang, setLang }) => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -82,9 +79,8 @@ const Navbar: React.FC<Omit<LayoutProps, 'children'>> = ({ lang, setLang }) => {
         </div>
       </div>
 
-      {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 pb-4">
+        <div className="md:hidden bg-white border-t border-gray-100 pb-4 shadow-xl">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navLinks.map((link) => (
               <Link
@@ -97,8 +93,8 @@ const Navbar: React.FC<Omit<LayoutProps, 'children'>> = ({ lang, setLang }) => {
               </Link>
             ))}
           </div>
-          <div className="px-5 py-3 border-t border-gray-100 flex items-center space-x-2">
-            <Globe className="w-4 h-4 text-gray-400" />
+          <div className="px-5 py-3 border-t border-gray-100 flex items-center space-x-2 overflow-x-auto">
+            <Globe className="w-4 h-4 text-gray-400 shrink-0" />
             {LANGUAGES.map((l) => (
               <button
                 key={l.code}
@@ -106,8 +102,8 @@ const Navbar: React.FC<Omit<LayoutProps, 'children'>> = ({ lang, setLang }) => {
                   setLang(l.code);
                   setIsOpen(false);
                 }}
-                className={`text-sm px-3 py-1 rounded ${
-                  lang === l.code ? 'bg-red-700 text-white' : 'bg-gray-50 text-gray-600'
+                className={`text-sm px-4 py-1.5 rounded-full transition-all shrink-0 ${
+                  lang === l.code ? 'bg-red-700 text-white shadow-lg' : 'bg-gray-100 text-gray-600'
                 }`}
               >
                 {l.label}
@@ -122,6 +118,16 @@ const Navbar: React.FC<Omit<LayoutProps, 'children'>> = ({ lang, setLang }) => {
 
 const Footer: React.FC<{ lang: Language }> = ({ lang }) => {
   const t = TRANSLATIONS[lang];
+  
+  const getWhatsAppLink = () => {
+    const msg = lang === 'mr' 
+      ? "नमस्कार, मला श्री जगन्नाथ इलेक्ट्रिकल्सच्या सेवांबद्दल अधिक माहिती हवी आहे." 
+      : lang === 'hi' 
+      ? "नमस्ते, मुझे श्री जगन्नाथ इलेक्ट्रिकल्स की सेवाओं के बारे में और जानकारी चाहिए।" 
+      : "Hello, I would like to know more about the services offered by Shree Jagannath Electricals.";
+    return `https://wa.me/918411007259?text=${encodeURIComponent(msg)}`;
+  };
+
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -133,11 +139,16 @@ const Footer: React.FC<{ lang: Language }> = ({ lang }) => {
               {t.msedclApproved}
             </p>
             <div className="flex space-x-4">
-              <a href="tel:+918411007259" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-700 transition-colors">
-                <Phone className="w-4 h-4" />
+              <a href="tel:+918411007259" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-700 transition-all hover:scale-110">
+                <Phone className="w-5 h-5" />
               </a>
-              <a href="https://wa.me/918411007259" className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-700 transition-colors">
-                <MessageCircle className="w-4 h-4" />
+              <a 
+                href={getWhatsAppLink()} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-700 transition-all hover:scale-110"
+              >
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -161,16 +172,21 @@ const Footer: React.FC<{ lang: Language }> = ({ lang }) => {
         </div>
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs">
           <p>© {new Date().getFullYear()} Shree Jagannath Electricals & Infra Co. All rights reserved.</p>
-          <p className="mt-4 md:mt-0">Design & Approved for MSEDCL Projects</p>
+          <p className="mt-4 md:mt-0 uppercase tracking-widest font-bold opacity-60">Design & Approved for MSEDCL Projects</p>
         </div>
       </div>
       
       {/* Sticky Quick Contact Buttons (Mobile) */}
-      <div className="md:hidden fixed bottom-6 right-6 flex flex-col space-y-3 z-50">
-        <a href="https://wa.me/918411007259" className="bg-green-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform">
+      <div className="md:hidden fixed bottom-6 right-6 flex flex-col space-y-4 z-50">
+        <a 
+          href={getWhatsAppLink()} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="bg-green-600 text-white p-5 rounded-full shadow-[0_10px_30px_rgba(22,163,74,0.4)] hover:scale-110 transition-transform animate-bounce"
+        >
           <MessageCircle className="w-6 h-6" />
         </a>
-        <a href="tel:+918411007259" className="bg-red-700 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform">
+        <a href="tel:+918411007259" className="bg-red-700 text-white p-5 rounded-full shadow-[0_10px_30px_rgba(185,28,28,0.4)] hover:scale-110 transition-transform">
           <Phone className="w-6 h-6" />
         </a>
       </div>

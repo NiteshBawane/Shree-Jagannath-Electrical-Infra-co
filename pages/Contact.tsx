@@ -7,6 +7,15 @@ import { MapPin, Phone, Mail, MessageCircle, Send } from 'lucide-react';
 export const Contact: React.FC<{ lang: Language }> = ({ lang }) => {
   const t = TRANSLATIONS[lang];
 
+  const getWhatsAppLink = () => {
+    const msg = lang === 'mr' 
+      ? "नमस्कार, मला श्री जगन्नाथ इलेक्ट्रिकल्सच्या सेवांबद्दल अधिक माहिती हवी आहे." 
+      : lang === 'hi' 
+      ? "नमस्ते, मुझे श्री जगन्नाथ इलेक्ट्रिकल्स की सेवाओं के बारे में और जानकारी चाहिए।" 
+      : "Hello, I would like to know more about the services offered by Shree Jagannath Electricals.";
+    return `https://wa.me/918411007259?text=${encodeURIComponent(msg)}`;
+  };
+
   return (
     <div className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,11 +65,14 @@ export const Contact: React.FC<{ lang: Language }> = ({ lang }) => {
             </div>
             
             <a 
-              href="https://wa.me/918411007259" 
-              className="flex items-center justify-center space-x-3 w-full p-6 bg-green-600 text-white rounded-3xl font-bold hover:bg-green-700 transition-colors shadow-lg shadow-green-200"
+              href={getWhatsAppLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center space-x-3 w-full p-6 bg-green-600 text-white rounded-3xl font-bold hover:bg-green-700 transition-all shadow-lg shadow-green-200 group relative overflow-hidden"
             >
-              <MessageCircle className="w-6 h-6" />
-              <span className="devanagari">{t.contact.whatsappAction}</span>
+              <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+              <MessageCircle className="w-6 h-6 relative z-10 animate-pulse" />
+              <span className="devanagari relative z-10">{t.contact.whatsappAction}</span>
             </a>
           </div>
 
